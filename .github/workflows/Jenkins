@@ -11,7 +11,7 @@ pipeline {
         stage('Snyk Security Scan') {
             steps {
                 snykSecurity(
-                    snykInstallation: 'snyk-latest',
+                    snykInstallation: 'snyk@latest',
                     snykTokenId: 'snyk-token',
                     severity: 'high',
                     failOnIssues: true,
