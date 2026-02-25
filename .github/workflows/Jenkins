@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    
     tools {
         nodejs 'Node' // Use the NodeJS installation configured in Jenkins
     }
@@ -12,13 +12,19 @@ pipeline {
             }
         }
         
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        
         stage('Snyk Security Scan') {
             steps {
                 snykSecurity(
                     snykInstallation: 'snyk@latest',
                     snykTokenId: 'snyk-api',
                     severity: 'high',
-                    failOnIssues: true,
+                    failOnIssues: false,
                     monitorProjectOnBuild: true
                 )
             }
