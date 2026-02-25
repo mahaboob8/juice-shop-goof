@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('Snyk Security Scan') {
+            steps {
+                snykSecurity(
+                    snykInstallation: 'snyk-latest',
+                    snykTokenId: 'snyk-token',
+                    severity: 'high',
+                    failOnIssues: true,
+                    monitorProjectOnBuild: true
+                )
+            }
+        }
+    }
+}
