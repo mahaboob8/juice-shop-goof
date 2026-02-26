@@ -22,3 +22,29 @@ custom_rules:
       - swift
       - typescript
       - vb
+
+custom_rules:
+  - id: mahaboob--security-policy
+    description: ''
+    severity: high
+    cwe:
+      - CWE-22
+    fix_analysis: ''
+    rule_code: ''
+    languages:
+      - apex
+      - c
+      - cpp
+      - csharp
+      - go
+      - html
+      - java
+      - javascript
+      - kotlin
+      - php
+      - python
+      - ruby
+      - scala
+      - swift
+      - typescript
+      - vb
