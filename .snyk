@@ -22,8 +22,6 @@ custom_rules:
       - swift
       - typescript
       - vb
-
-custom_rules:
   - id: mahaboob--security-policy
     description: ''
     severity: high
